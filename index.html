@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobdse-web-app-status-bar-style" content="#000" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <!-- Tailwind -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+
+    <!-- Main -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Invoice</title>
+</head>
+
+<body class="m-0 bg-gray-100 ">
+    <!-- Wrapper -->
+    <div class="max-w-max w-full my-0 mx-auto font-sans text-black bg-white box-border overflow-hidden">
+        <!-- Container -->
+        <div class="md:max-w-screen-lg mx-auto">
+            <!-- Main -->
+            <div class="max-w-595 mx-auto p-8">
+                <!-- Header -->
+                <div class="mb-8 grid gap-4 items-start sm:grid-cols-2">
+                    <!-- Number -->
+                    <div>
+                        <div class="text-32px text-gray-888">
+                            <label for="">№</label>
+                            <input class="w-6/12" type="text" maxlength="4" id="numberInvoice">
+                        </div>
+                    </div>
+
+                    <!-- Header Info -->
+                    <div>
+                        <!-- 1 -->
+                        <div class="text-32px font-bold text-black">Invoice</div>
+
+                        <!-- 2 -->
+                        <div class="py-8 grid grid-cols-2 gap-4 text-10px">
+                            <div>
+                                <div class="font-semibold">Issued</div>
+                                <div class="font-normal">01 Jan, 2022</div>
+                            </div>
+
+                            <div>
+                                <div class="font-semibold">Due</div>
+                                <div class="font-normal">07 Jan, 2022</div>
+                            </div>
+                        </div>
+
+                        <!-- 3 -->
+                        <div class="grid grid-cols-2 gap-4 text-10px">
+                            <div>
+                                <div class="font-semibold">From</div>
+                                <div class="font-normal">Name or Company <br> 123 Godly St.<br> Internet, GW000<br> United States</div>
+                            </div>
+
+                            <div>
+                                <div class="font-semibold">To</div>
+                                <div class="font-normal">Name or Company <br> 123 Godly St. <br> Internet, GW000 <br> United States</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Details -->
+                <div class="mb-8 text-10px">
+                    <!-- Table header -->
+                    <div class="py-1 border-b-2 border-solid border-black">
+                        <div class="grid grid-col-4 font-semibold">
+                            <div>Item</div>
+                            <div>Cost</div>
+                            <div>Qty</div>
+                            <div class="text-right">Total</div>
+                        </div>
+                    </div>
+                    <!-- Services -->
+                    <!-- Item 1 -->
+                    <div id="tableInvoice">
+                        <!-- <div class="py-1 border-b-1 border-solid border-gray-200 hover:bg-gray-100">
+                        <div class="grid grid-col-4 font-normal">
+                            <div>
+                                <div>Design Services</div>
+                                <div class="text-gray-888">20% initial fee</div>
+                            </div>
+                            <div>$2,000</div>
+                            <div>1</div>
+                            <div class="text-right">$2,000</div>
+                        </div>
+                    </div> -->
+                    </div>
+                </div>
+
+                <!-- Add Button -->
+                <div class="mb-8">
+                    <div class="w-4 h-4 flex items-center justify-center text-10px rounded-full bg-gray-200 cursor-pointer hover:bg-gray-300" id="btnOpenPopap">
+                        <span>+</span>
+                    </div>
+                </div>
+
+                <!-- Totals -->
+                <div class="ml-auto mb-8 grid w-48-percent text-10px text-black">
+                    <!-- Subtotal -->
+                    <div class="pb-8 py-1 border-t-2 border-solid border-black">
+                        <div class="grid grid-col-2">
+                            <div class="font-semibold">Subtotal</div>
+                            <div class="font-normal text-right" id="mainSubtotal">$0</div>
+                        </div>
+                        <div class="grid grid-col-2">
+                            <div class="flex flex-row justify-between gap-1 font-semibold">
+                                <div>
+                                    <label for="">Discount (</label>
+                                    <input class="w-4 text-10px text-black" type="text" maxlength="2" value="" id="mainInputDiscount"> %)
+                                </div>
+                            </div>
+                            <div class="font-normal text-right" id="mainDiscount">$0</div>
+                        </div>
+                    </div>
+                    <!-- Discount -->
+                    <div class="py-1 border-t-2 border-solid border-black">
+                        <div class="grid grid-col-2">
+                            <div class="font-semibold">Total</div>
+                            <div class="font-normal text-right" id="mainTotal">$0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spacer -->
+                <div class="hidden md:block md:mb-8 h-106"></div>
+
+                <!-- Footer -->
+                <div class="ml-auto grid w-48-percent text-10px text-black">
+                    <div class="grid sm:grid-cols-2">
+                        <div class="font-semibold">IBAN</div>
+                        <div class="sm:text-right">
+                            <input class="border-hidden" type="text" value="" maxlength="24" pattern="" placeholder="DE89 3704 XXXX XXXX XXXX" id="cardInvoice">
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        This invoice is to be paid by wire transfer only, unless <br> agreed otherwise and must be paid before the date <br> due specified above. <br>
+                    </div>
+                    <div>Thank you, <br> Your name</div>
+                </div>
+            </div>
+
+            <!-- Popap -->
+            <div class="bg-white hidden" id="popap">
+                <form action="" class="" id="form">
+                    <div class="fixed top-0 left-0 right-0 z-10 w-full h-256 max-w-595 mx-auto p-8 pb-4 bg-white">
+                        <!-- Icons -->
+                        <div class="w-full grid grid-cols-2 font-semibold text-10px transform-y-10">
+                            <button class="text-left cursor-pointer text-gray-700 disabled:text-gray-300" id="btnDeleteItem">Delete</button>
+                            <button class="text-right text-gray-700 hover:text-black cursor-pointer" id="btnClosePopap">
+                                close
+                            </button>
+                        </div>
+
+                        <!-- Add -->
+                        <div class="pb-5 grid grid-col-popap-5 items-center">
+                            <div class="text-32px font-bold text-black" id="titlePopap">Add</div>
+                            <div class="text-10px font-semibold">
+                                <label for="">Qty:</label>
+                                <input class="w-10" type="text" placeholder="" id="inputQtyPopap" required>
+                            </div>
+                            <div class="text-10px font-semibold">
+                                <label for="">Cost:$</label>
+                                <input class="w-10" type="text" placeholder="" id="inputCostPopap" required>
+                            </div>
+                            <div class="text-10px font-semibold">
+                                <label for="">Total:$</label>
+                                <input class="w-10" type="text" placeholder="" id="inputTotalPopap" disabled>
+                            </div>
+                            <div class="text-right">
+                                <button class="max-w-61 w-full h-28 mx-auto mr-0 flex items-center justify-center bg-black text-10px text-white rounded  disabled:opacity-30 disabled:text-gray-200" id="addItemButton">
+                                    Create
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Textarea -->
+                        <div>
+                            <div class="pb-5">
+                                <div class="pb-1 text-10px font-semibold">Work item:</div>
+                                <div class="text-10px font-normal text-gray">
+                                    <input class="w-full h-full p-6 border-i bg-gray-100 focus-outline" type="text" placeholder="Working on new functionality" id="itemWorkPopap" required>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="pb-1 text-10px font-semibold">Description:</div>
+                                <div class="h-58 text-10px font-normal text-gray">
+                                    <textarea class="w-full h-full p-6 bg-gray-100" placeholder="Design block implementatino for user account based on ticket number OPT-3217" id="itemDescPopap"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fixed top-0 left-0 right-0 z-0 max-w-595 w-full mx-auto h-full bg-gray-700 bg-opacity-60" id="popapBg">
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+        <!-- End Container -->
+    </div>
+    <!-- End Wrapper -->
+
+    <!-- Script -->
+    <script src="js/model/WorkItemVO.js"></script>
+    <script src="js/model/InvoiceVO.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

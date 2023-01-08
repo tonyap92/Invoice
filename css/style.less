@@ -1,0 +1,176 @@
+html *,
+html ::after,
+html ::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+#inputTotalPopap {
+  background: white;
+  border: none;
+}
+
+input {
+  border-bottom: 1px solid #D1D1D1;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.focus-outline {
+  &:focus-visible {
+    outline: auto;
+  }
+}
+
+textarea {
+  resize: none;
+  border: 1px solid #D1D1D1;
+}
+
+
+.text-gray {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.border-i {
+  border: 1px solid #D1D1D1;
+}
+
+.h-28 {
+  height: 28px;
+}
+
+.h-58 {
+  height: 58px;
+}
+
+
+.h-106 {
+  height: 106px;
+}
+
+.h-256 {
+  height: auto;
+
+  @media (min-width: 460px) {
+    height: 256px;
+  }
+}
+
+
+.w-48-percent {
+  width: 48%;
+}
+
+.max-w-61 {
+  max-width: 61px;
+}
+
+.max-w-595 {
+  max-width: 595px;
+}
+
+.max-w-max {
+  max-width: max-content;
+}
+
+.max-w-screen-595 {
+  max-width: 595px;
+}
+
+.p-6 {
+  padding: 6px;
+}
+
+.grid-col-2 {
+  grid-template-columns: 70% 30%;
+}
+
+.grid-col-4 {
+  grid-template-columns: 52% 16% 16% 16%;
+}
+
+.grid-col-popap-5 {
+  grid-template-columns: 100%;
+  gap: 10px;
+
+  @media (min-width: 460px) {
+    // grid-template-columns: 32% 18% 18% 32%;
+    grid-template-columns: 23% 18% 18% 18% 23%;
+    gap: 0;
+  }
+
+}
+
+.text-10px {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+#openPopap div {
+  line-height: inherit;
+}
+
+
+
+.text-32px {
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.text-gray-888 {
+  color: #888888;
+}
+
+.transform-y-10 {
+  transform: translateY(-10px);
+}
+
+.bg-opacity-60 {
+  opacity: 0.5;
+}
+
+.border-b-1 {
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.disabled\:opacity-30:disabled {
+  opacity: 0.3;
+}
+
+.disabled\:text-gray:disabled,
+.text-gray-200 {
+  --un-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--un-text-opacity));
+}
